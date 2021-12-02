@@ -6,19 +6,39 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "fill in later",
-    "build": "fill in later",
-    "dev": "fill in later"
+    "build": "webpack",
+    "dev": "webpack serve"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.24.0",
+    "css-loader": "^6.5.1",
     "express": "^4.17.1",
+    "install": "^0.13.0",
+    "npm": "^8.1.4",
     "pg": "^8.5.1",
-    "react": "^17.0.2"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.6",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.4.1",
+    "style-loader": "^3.3.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/plugin-transform-async-to-generator": "^7.16.0",
+    "@babel/plugin-transform-runtime": "^7.16.4",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-react": "^7.16.0",
+    "@babel/runtime": "^7.16.3",
+    "babel": "^6.23.0",
+    "babel-loader": "^8.2.3",
+    "html-loader": "^3.0.1",
     "html-webpack-plugin": "^5.5.0",
-    "webpack": "^5.64.4"
+    "webpack": "^5.64.4",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.6.0"
   }
 }

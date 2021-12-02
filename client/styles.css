@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Averia+Libre:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Averia+Libre:ital@1&family=Berkshire+Swash&display=swap');
+
+html {
+  background: rgb(245, 219, 189);
+  font-family:'Averia Libre', cursive;
+}
+
+#header {
+  display: flex;
+  justify-content: center;
+  font-family: 'Berkshire Swash', cursive;
+  font-size: 40px;
+}
+
+#insideHeader {
+  display: flex;
+  justify-self: center;
+  font-family: 'Berkshire Swash', cursive;
+  font-size: 30px;
+}
+
+#stats-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: black;
+}
+
+#submit-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: black;
+}
+
+#course-entry-box {
+  
+}
+
+body {
+  padding-top:10px;
+}
+
+#outerBox {
+  display: flex;
+  justify-content: center;
+}
