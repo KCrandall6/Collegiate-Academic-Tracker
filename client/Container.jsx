@@ -1,22 +1,26 @@
 import React from "react";
 import { connect } from 'react-redux';
-import * as actions from './actions';
+import { bindActionCreators } from 'redux';
+import * as actions from './actions.js';
 import CourseCreator from './CourseCreator.jsx';
 import CoursesDisplay from "./CoursesDisplay.jsx";
 
 
 
 const mapStateToProps = ({ 
-  courses: { newCourseName, courseList, synced }
+  courses: { totalCourses, totalCredits, overallGPA, newCourseName, courseList, synced }
 }) => ({
+  totalCourses,
+  totalCredits,
+  overallGPA,
   newCourseName,
   courseList,
   synced,
 });
 
-const mapDispatchToProps = dispatch => ({
-  syncCourses: () => dispatch(actions.syncCourses()),
-});
+const mapDispatchToProps = dispatch => (
+  bindActionCreators(actions, dispatch)
+);
 
 
 
@@ -27,17 +31,13 @@ const ClassInfo = props => (
       <hr/>
       <div id="stats-box">
       <h3 id="insideHeader">Academic Career Stats</h3>
-        {/* <p>Total Classes Taken: {`${totalCourses}`}</p> */}
-        <p> Total Classes Taken: 5</p>
-        {/* <p>Total Credits: {`${totalCredits}`}</p> */}
-        <p>Total Credits: 4</p>
-        {/* <p>Overall GPA: {`${overallGPA}`}</p> */}
-        <p>Overall GPA: 4</p>
+        <p>Total Classes Taken: {`${props.totalCourses}`}</p>
+        <p>Total Credits: {`${props.totalCredits}`}</p>
+        <p>Overall GPA: {`${props.overallGPA}`}</p>
       </div>
       <div>
         <CourseCreator
         newCourseName={props.newCourseName}
-        updateCourse={props.updateCourse}
         addCourse={props.addCourse}
         newCredits={props.newCredits}
         newGPA={props.newGPA}

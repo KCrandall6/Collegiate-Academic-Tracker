@@ -5,11 +5,10 @@
 import React from "react";
 
 const CourseCreator = ({
-  newCourseName,
-  updateCourse,
+  // newCourseName,
   addCourse,
-  newCredits,
-  newGPA,
+  // newCredits,
+  // newGPA,
 }) => (
   <div>
     <form id="submit-form" onSubmit={addCourse}>
@@ -17,22 +16,25 @@ const CourseCreator = ({
         Course Name: 
         <input
           id="new-course"
-          value={newCourseName}
-          onChange={e => updateCourse(e.target.value)}/>
+          // value={newCourseName}
+          // onChange={e => addCourse(e.target.value)}
+          />
       </label>
       <label>
         Course Credits: 
         <input
           id="new-credits"
-          value={newCredits}
-          onChange={e => updateCourse(e.target.value)}/>
+          // value={newCredits}
+          // onChange={e => addCourse(e.target.value)}
+          />
       </label>
       <label>
         GPA Earned: 
         <input
-          id="new-GPA"
-          value={newGPA}
-          onChange={e => updateCourse(e.target.value)}/>
+          id="new-grade"
+          // value={newGPA}
+          // onChange={e => addCourse(e.target.value)}
+          />
       </label>
       <button id="add-course" className="primary" type="submit">Add Course</button>
     </form>

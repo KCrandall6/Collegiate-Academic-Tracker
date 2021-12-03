@@ -6,6 +6,7 @@ import * as tasks from './actionTypes';
 const initialState = {
   totalCourses: 0,
   totalCredits: 0,
+  totalGPA: 0,
   overallGPA: 0,
   courseList: [],
   newCourseName: '',
@@ -18,14 +19,15 @@ const courseReducer = (state = initialState, action) => {
       return {
         ...state,
         courseList: state.courseList.concat({
-          course: action.payload,
-          credits: action.payload,
-          grade: action.payload,
+          course: action.payload[0],
+          credits: action.payload[1],
+          grade: action.payload[2],
         }),
         totalCourses: state.totalCourses + 1,
         // need to figure out how to change the two below
-        totalCredits: state.totalCredits + 3,
-        overallGPA: state.overallGPA + 3,
+        totalCredits: state.totalCredits + action.payload[1],
+        totalGPA: state.totalGPA + action.payload[2],
+        overallGPA: state.totalGPA / state.totalCourses,
 
         newCourseName: '',
         synced: false,

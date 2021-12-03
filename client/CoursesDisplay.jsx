@@ -14,7 +14,7 @@ const courseGenerator = (course, idx, props) => (
 
 const CoursesDisplay = props => (
   <div className="displayBox">
-    <h4>Courses</h4>
+    <h4>Courses Taken</h4>
     <div className="allCourses">
       {props.courseList.map((course, idx) => courseGenerator(course, idx, props))}
     </div>
