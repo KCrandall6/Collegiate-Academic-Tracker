@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./server/server.js",
-    "build": "webpack",
+    "start": "cross-env NODE_ENV=production nodemon server/server.js",
+    "build": "cross-env NODE_ENV=production webpack",
     "dev": "webpack serve"
   },
   "keywords": [],
@@ -35,8 +35,11 @@
     "@babel/runtime": "^7.16.3",
     "babel": "^6.23.0",
     "babel-loader": "^8.2.3",
+    "cross-env": "^7.0.3",
     "html-loader": "^3.0.1",
     "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.5.3",
+    "nodemon": "^2.0.15",
     "webpack": "^5.64.4",
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.6.0"

@@ -1,7 +1,7 @@
 const path = require('path');
 const express = require('express');
 
-const coursesController = require('./courseController.js');
+const apiRouters = require('./api.js');
 const app = express();
 const router = express.Router();
 const port = 3000;
@@ -9,13 +9,11 @@ const port = 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
 
-app.get('/', coursesController.getCourses, (req, res) => {
-  res.status(200).json(res.locals.courses)
-});
+app.use(express.static(path.join(__dirname, "../dist")));
 
-app.post('/', coursesController.addCourse, (req, res) => {
-  res.status(200).json({});
-});
+app.use('/', apiRouters);
+
+
 
 app.use((err, req, res, next) => {
   const defaultErr = {
@@ -27,8 +25,6 @@ app.use((err, req, res, next) => {
   console.log(errorObj.log);
   return res.status(errorObj.status).json(errorObj.message);
 });
-
-
 
 
 app.listen(port, () => {

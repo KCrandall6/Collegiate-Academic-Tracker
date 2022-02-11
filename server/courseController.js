@@ -21,9 +21,8 @@ coursesController.getCourses = (req, res, next) => {
 
 coursesController.addCourse = (req, res, next) => {
   const newData = req.body;
-
-  const newQuery = `INSERT INTO courses (Course_Name, Course_Grade, Course_Credits) VALUES (${newData.courseName}, ${newData.courseGrade}, ${newData.courseCredits})`;
-
+  console.log('newData', newData);
+  const newQuery = `INSERT INTO courses (Course_Name, Course_Grade, Course_Credits) VALUES ('${newData.course_name}', ${newData.course_grade}, ${newData.course_credits})`;
   db.query(newQuery, (err, result) => {
     return next();
   });

@@ -1,18 +1,26 @@
 
 
-// const express = require('express');
-// const coursesController = require('./courseController.js');
-// const router = express.Router();
+const express = require('express');
+const router = express.Router();
+const path = require('path');
 
-// router.get('/',
-//   coursesController.getCourses,
-//   (req, res) => res.status(200).json(res.locals.courses)
-// );
+const coursesController = require('./courseController.js');
 
-// router.post('/courses',
-//   coursesController.addCourse,
-//   (req, res) => res.status(200).json({})
-// );
+router.get('/', 
+  // coursesController.getCourses,
+  (req, res) => {
+  return res.status(200).sendFile(path.resolve(__dirname, '../dist/index.html'));
+});
+
+router.get('/courses',
+  coursesController.getCourses,
+  (req, res) => res.status(200).json(res.locals.courses)
+);
+
+router.post('/addCourse',
+  coursesController.addCourse,
+  (req, res) => res.status(200).json({})
+);
 
 
-// module.exports = router;
+module.exports = router;
